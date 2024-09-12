@@ -1,0 +1,495 @@
+@import './utils/_mixins.scss';
+@import './utils/_variables.scss';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, li{
+    color: $mainTextColor;
+}
+
+body{
+    @include flex(center, center, column);
+    header{
+        width: 100%;
+        max-width: 1600px;
+        height: 10vh;
+        @include flex(center, center, row);
+        nav{
+            width: 100%;
+            height: 100%;
+            padding: 10px 200px;
+            @include flex(space-between, center, row);
+            .nav-logo{
+                @include flex(flex-start, center, row, 10px);
+            }
+            .nav-links{
+                @include flex(center, center, row, 30px);
+                button{
+                    padding: 8px 30px;
+                    border: 2px solid $mainColor;
+                    background: transparent;
+                    border-radius: 5px;
+                    font-size: 15px;
+                    transition: 0.2s all;
+                    &:hover{
+                        background: $mainColor;
+                        color: #fff;
+                    }
+                }
+                & > li:nth-child(6) button{
+                    background: $mainColor;
+                    color: #fff;
+                    &:hover{
+                        background: transparent;
+                        color: $mainColor;
+                    }
+                }
+            }
+        }
+    }
+    
+    main{
+        width: 100%;
+        max-width: 1600px;
+        @include flex(center, center, column, 100px);
+        #home{
+            width: 100%;
+            height: 90vh;
+            @include flex(center, center, row, 50px);
+            padding: 10px 200px;
+            .home-info{
+                @include flex(center, start, column, 30px);
+                h1{
+                    font-size: 3.2rem;
+                }
+                .home-info-btns{
+                    @include flex(center, center, row, 30px);
+                    button{
+                        padding: 10px 30px;
+                        border: 2px solid $mainColor;
+                        background: transparent;
+                        border-radius: 5px;
+                        font-size: 15px;
+                        background: $mainColor;
+                        transition: 0.2s all;
+                        color: #fff;
+                        &:hover{
+                            background: transparent;
+                            color: $mainColor;
+                        }
+                    }
+                    a{
+                        @include flex(center, center, row, 10px);
+                        color: $mainColor;
+                    }
+                }
+            }
+        }
+        #about{
+            width: 100%;
+            @include flex(center, center, column, 100px);
+            padding: 10px 200px;
+            & > h1{
+                font-size: 2.5rem;
+            }
+            .about-main{
+                width: 100%;
+                @include flex(center, center, row, 50px);
+                .about-main-card{
+                    width: 100%;
+                    @include flex(center, start, column, 10px);
+                    & > div{
+                        width: 50px;
+                        height: 50px;
+                        background: $mainColor;
+                        @include flex(center, center, row);
+                        color: #fff;
+                        border-radius: 20px;
+                    }
+                }
+                .about-main-card:nth-child(2){
+                    & > div{
+                        background: #4D8DFF;
+                    }
+                }
+                .about-main-card:nth-child(3){
+                    & > div{
+                        background: #740A76;
+                    }
+                }
+                .about-main-card:nth-child(4){
+                    & > div{
+                        background: #F03E3D;
+                    }
+                }
+            }
+            & > button{
+                padding: 10px 30px;
+                border: 1px solid $mainColor;
+                background: $mainColor;
+                color: #fff;
+                border-radius: 5px;
+                font-size: 1rem;
+                text-transform: uppercase;
+                font-weight: 600;
+                transition: 0.2s all;
+                &:hover{
+                    background: transparent;
+                    color: $mainColor;
+                }
+            }
+        }
+        #management{
+            width: 100%;
+            padding: 50px 200px;
+            @include flex(space-between, center, row, 100px);
+            .management-info{
+                @include flex(center, start, column, 20px);
+            }
+        }
+        #customer-support{
+            width: 100%;
+            padding: 50px 200px;
+            @include flex(space-between, center, row, 100px);
+            .customer-support-info{
+                @include flex(center, start, column, 20px);
+                ul{
+                    @include flex(center, start, column, 10px);
+                    li{
+                        @include flex(flex-start, center, row, 15px);
+                        i{
+                            background: $mainColor;
+                            width: 30px;
+                            height: 30px;
+                            @include flex(center, center, row);
+                            color: #fff;
+                            border-radius: 10px;
+                        }
+                    }
+                }
+            }
+        }
+        #collobrative{
+            width: 100%;
+            padding: 50px 200px;
+            @include flex(space-between, center, row, 100px);
+            .collobrative-info{
+                @include flex(center, start, column, 20px);
+            }
+        }
+        #our-workers{
+            width: 100%;
+            @include flex(center, center, column, 80px);
+            padding: 10px 200px;
+            .our-workers-header{
+                width: 100%;
+                @include flex(center, center, column, 20px);
+            }
+            .our-workers-main{
+                width: 100%;
+                height: 100%;
+                @include grid(repeat(2, 1fr), repeat(2, 1fr), 20px);
+                .worker{
+                    @include flex(center, center, row, 20px);
+                    img{
+                        width: 100px;
+                        height: 100px;
+                        object-fit: cover;
+                        border-radius: 50%;
+                        outline: 2px solid $mainColor;
+                        outline-offset: 3px;
+                    }
+                }
+            }
+            & > button{
+                padding: 10px 30px;
+                border: 1px solid $mainColor;
+                background: $mainColor;
+                color: #fff;
+                border-radius: 5px;
+                font-size: 1rem;
+                text-transform: uppercase;
+                font-weight: 600;
+                transition: 0.2s all;
+                &:hover{
+                    background: transparent;
+                    color: $mainColor;
+                }
+            }
+        }
+        #content-strategy{
+            width: 100%;
+            padding: 50px 200px;
+            @include flex(center, center, column, 200px);
+            .content-strategy-header{
+                width: 100%;
+                @include flex(center, center, column, 20px);
+            }
+            .content-strategy-main{
+                width: 100%;
+                @include flex(center, center, row, 20px);
+                .content-strategy-card{
+                    width: 100%;
+                    @include flex(center, start, column, 20px);
+                    border: 1px solid #eee;
+                    border-radius: 10px;
+                    padding: 0px 0px 10px 0px;
+                    img{
+                        width: 100%;
+                        border-top-left-radius: 10px;
+                        border-top-right-radius: 10px;
+                    }
+                    .content-strategy-card-main{
+                        padding: 10px;
+                    }
+                }
+            }
+        }
+        #pricing{
+            width: 100%;
+            padding: 10px 200px;
+            @include flex(center, center, column, 20px);
+            .pricing-header{
+                @include flex(center, center, column, 10px);
+            }
+            .pricing-main{
+                width: 100%;
+                @include flex(space-between, center, row, 50px);
+                .pricing-card{
+                    width: 100%;
+                    @include flex(center, center, column, 20px);
+                    border: 1px solid #eee;
+                    border-radius: 10px;
+                    padding: 20px 10px;
+                    text-align: center;
+                    sub,sup{
+                        font-size: 13px;
+                    }
+                    ul{
+                        @include flex(center, center, column, 5px);
+                    }
+                    button{
+                        padding: 10px 30px;
+                        border: 1px solid $mainColor;
+                        background: $mainColor;
+                        color: #fff;
+                        border-radius: 5px;
+                        font-size: 1rem;
+                        text-transform: uppercase;
+                        font-weight: 600;
+                        transition: 0.2s all;
+                        &:hover{
+                            background: transparent;
+                            color: $mainColor;
+                        }
+                    }
+                }
+            }
+        }
+        #clients{
+            width: 100%;
+            @include flex(center, center, column, 20px);
+            padding: 10px 200px;
+            .clients-header{
+                width: 100%;
+                @include flex(center, center, column, 10px);
+            }
+            .clients-main{
+                width: 100%;
+                @include flex(space-between, center, row, 50px);
+                .clients-card{
+                    width: 100%;
+                    @include flex(center, start, column, 30px);
+                    border: 1px solid #eee;
+                    padding: 20px;
+                    border-radius: 10px;
+                    .clients-card-rates{
+                        @include flex(center, center, row, 5px);
+                        i{
+                            color: yellow;
+                        }
+                    }
+                    .clients-card-user{
+                        @include flex(center, start, row, 20px);
+                        img{
+                            width: 50px;
+                            height: 50px;
+                            object-fit: cover;
+                            border-radius: 50%;
+                            border: 1px solid #740A76;
+                        }
+                    }
+                }
+            }
+        }
+        #cta{
+            width: 100%;
+            @include flex(center, center, row);
+            padding: 10px 200px;
+            .cta-container{
+                width: 100%;
+                background: $mainColor;
+                color: #fff;
+                @include flex(space-between, center, row, 20px);
+                padding: 50px;
+                border-radius: 30px;
+                .cta-info{
+                    width: 100%;
+                    @include flex(center, start, column, 50px);
+                    h1{
+                        font-size: 2.5rem;
+                        color: #fff;
+                    }
+                    button{
+                        padding: 10px 30px;
+                        border: 1px solid #fff;
+                        background: #fff;
+                        color: $mainColor;
+                        border-radius: 5px;
+                        font-size: 1rem;
+                        text-transform: uppercase;
+                        font-weight: 600;
+                        transition: 0.2s all;
+                        &:hover{
+                            background: transparent;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    footer{
+        width: 100%;
+        padding: 100px 200px 50px 200px;
+        @include flex(center, center, column, 50px);
+        .footer-main{
+            width: 100%;
+            @include flex(space-between, start, row, 20px);
+            ul{
+                @include flex(start, start, column, 10px);
+                li{
+                    @include flex(start, start, row, 10px);
+                    i{
+                        color: $mainColor;
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        background: #eee;
+                        @include flex(center, center, row, 10px);
+                    }
+                    form{
+                        @include flex(center, start, column, 10px);
+                        width: 100%;
+                        input{
+                            width: 100%;
+                            padding: 5px;
+                            border: 1px solid #dbdbdb;
+                            border-radius: 5px;
+                        }
+                        button{
+                            padding: 10px 30px;
+                            background: $mainColor;
+                            color: #fff;
+                            border: none;
+                            border-radius: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.bar{
+    display: none;
+}
+
+
+@media (max-width: 1110px) {
+    body{
+        header{
+            nav{
+                padding: 10px 20px;
+            }
+        }
+        main{
+            #home, #about, #management, #customer-support, #our-workers, #content-strategy, #collobrative,#pricing, #clients, #cta{
+                padding: 10px 20px;
+            }
+        }
+        footer{
+            padding: 10px 20px;
+        }
+    }
+}
+@media (max-width: 900px) {
+    body{
+        img{
+            width: 100%;
+        }
+        header{
+            nav{
+                .bar{
+                    display: inline;
+                }
+                .nav-links{
+                    display: none;
+                }
+            }
+        }
+        main{
+            #home{
+                @include flex(center, center, column, 20px);
+                height: auto;
+            }
+            #about{
+                @include flex(center, center, column, 20px);
+                .about-main{
+                    @include flex(center, center, column, 20px);
+                }
+            }
+            #management,#customer-support, #collobrative{
+                @include flex(center, center, column, 20px);
+            }
+            #our-workers{
+                text-align: center;
+                .our-workers-main{
+                    @include grid(repeat(1, 1fr), repeat(4, 1fr), 20px);
+                }
+            }
+            #content-strategy{
+                .content-strategy-main{
+                    @include flex(center, center, column, 20px);
+                }
+            }
+            #pricing{
+                .pricing-main{
+                    @include flex(center, center, column, 20px);
+                }
+            }
+            #clients{
+                .clients-main{
+                    @include flex(center, center, column, 20px);
+                }
+            }
+            #cta{
+                .cta-container{
+                    @include flex(center, center, column, 20px);
+                    text-align: center;
+                }
+            }
+        }
+        footer{
+            .footer-main{
+                @include flex(center, center, column, 20px);
+            }
+        }
+    }
+}
